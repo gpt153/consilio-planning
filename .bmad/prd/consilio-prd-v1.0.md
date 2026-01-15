@@ -141,10 +141,20 @@ Empower consultants at private foster care consulting firms to spend more time s
 - ✅ Health check endpoints
 - ✅ Testing infrastructure (Jest for backend, Vitest for frontend)
 
-### ❌ Out of Scope - Future Phases
+#### AI Features (MVP CORE - Required for Beta Time-Savings Validation)
+- ✅ Claude AI integration (infrastructure complete)
+- 🔄 **Månadsrapporter (Monthly Reports)** - AI generation from case data
+- 🔄 **Handledarrapporter (Supervisor Reports)** - AI generation for foster home supervision
+- 🔄 **Journalanteckningar (Journal Entries)** - AI-assisted case notes from conversations
+- 🔄 **Email Reply Suggestions** - AI suggests responses to incoming emails
+- 🔄 **Calendar Event Extraction** - AI suggests calendar events from email content
+- 🔄 **Meeting Notes Generation** - AI transcribes meetings into structured notes
 
-#### Advanced Features (Post-Beta)
-- ❌ AI-powered document generation (meeting notes, monthly reports)
+**Critical:** Without AI document generation, beta testers cannot evaluate the "60-70% time savings" value proposition. These features are REQUIRED for MVP, not post-MVP.
+
+### ❌ Out of Scope - Future Phases (Post-Beta)
+
+#### Advanced AI Features (Post-Beta)
 - ❌ Anonymization/de-anonymization engine for AI safety
 - ❌ AI-assisted matching (placement requests → foster homes)
 - ❌ 24/7 AI chatbot for foster homes (rådgivnings-AI)

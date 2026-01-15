@@ -134,6 +134,27 @@ epics:
     notes: Test suite needs fixing before beta launch
 
   - id: "005"
+    title: "AI Document Generation (MVP CORE)"
+    status: draft
+    priority: critical
+    complexity: 3
+    created: 2026-01-15
+    started: null
+    completed: null
+    issues: []
+    blocked_by: "004"
+    blocks: ["006"]
+    notes: |
+      CRITICAL MVP FEATURE - Beta testers cannot evaluate 60-70% time savings without AI.
+      Infrastructure exists (claude-client.ts, document-generation.executor.ts).
+      Need Swedish foster care specific templates:
+      - Månadsrapporter (monthly reports)
+      - Handledarrapporter (supervisor reports)
+      - Journalanteckningar (journal entries)
+      - Email reply suggestions
+      - Calendar event extraction from emails
+
+  - id: "006"
     title: "GDPR Compliance & Production Readiness"
     status: draft
     priority: high
@@ -142,37 +163,42 @@ epics:
     started: null
     completed: null
     issues: []
-    blocked_by: "004"
+    blocked_by: "005"
     blocks: []
     notes: Required for EU/Swedish launch - data export, deletion, retention
 
 # Progress Metrics
 metrics:
-  total_epics: 5
+  total_epics: 6
   completed_epics: 3
   total_issues: 16
   completed_issues: 8
   in_progress_issues: 2
   blocked_issues: 0
-  overall_progress: 70  # Percentage toward MVP
+  overall_progress: 60  # Reduced from 70% - AI features now in MVP scope
   backend_progress: 95  # Backend nearly complete
   frontend_progress: 75  # UI functional, polish needed
   testing_progress: 50  # Tests exist but some failing
+  ai_features_progress: 20  # Infrastructure exists, Swedish templates needed
   documentation_progress: 40  # PRD complete, ADRs missing
 
 # Notes and Context
 notes: |
   **Current Status (2026-01-15):**
-  - 70% complete toward beta-ready MVP
+  - 60% complete toward beta-ready MVP (revised down from 70% - AI features now in scope)
   - Core features implemented and functional
   - Test suite has failures - SCAR working on fix (Issue #135)
   - Planning workspace activated today (BMAD methodology)
+  - **CRITICAL SCOPE CLARIFICATION:** AI document generation IS MVP core, not post-MVP
 
   **Immediate Priorities:**
   1. Fix test failures (Issue #135 - in progress)
-  2. GDPR compliance features (data export/deletion)
-  3. Production deployment documentation
-  4. Beta tester recruitment
+  2. **Implement AI document generation (månadsrapporter, handledarrapporter, journalanteckningar)**
+  3. **Implement AI email reply suggestions**
+  4. **Implement AI calendar event extraction**
+  5. GDPR compliance features (data export/deletion)
+  6. Production deployment documentation
+  7. Beta tester recruitment
 
   **Blockers:**
   - Test failures preventing deployment confidence
@@ -224,10 +250,10 @@ decisions:
     rationale: Fail-fast on misconfiguration, type-safe env access
 
   - date: 2026-01-15
-    title: "Defer AI features to post-MVP"
-    adr: null  # TODO: Document in adr/006-defer-ai-features.md
-    impact: high
-    rationale: Focus on core workflows, validate product-market fit first
+    title: "AI document generation IS MVP core (not post-MVP)"
+    adr: null  # TODO: Document in adr/006-ai-mvp-core.md
+    impact: critical
+    rationale: Beta testers cannot evaluate "60-70% time savings" without AI doing the documentation. Swedish-specific templates (månadsrapporter, handledarrapporter, journalanteckningar) + email/calendar AI required for MVP.
 
 # Review Schedule
 reviews:

@@ -64,9 +64,16 @@ Consilio is a modern case management platform designed for private Swedish consu
 - Workflow engine (basic automation)
 - Audit logging
 - Multi-tenant RLS (Row-Level Security)
+- **AI Document Generation (MVP CORE):**
+  - Månadsrapporter (monthly reports)
+  - Handledarrapporter (supervisor reports)
+  - Journalanteckningar (journal entries/case notes)
+  - Email reply suggestions
+  - Calendar event extraction from emails
+  - Meeting notes generation
 
 ### Out of Scope (Post-MVP)
-- AI features (anonymization, document generation, smart matching) - Deferred to Phase 8 based on beta feedback
+- Advanced AI features (anonymization engine, smart matching, 24/7 chatbot) - Phase 8
 - Real-time communication (WebSocket chat, video, push notifications) - Phase 9
 - Mobile native apps (React Native) - Phase 10
 - Advanced integrations (BankID, SSIL, journal systems) - Phase 11
