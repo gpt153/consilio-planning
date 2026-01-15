@@ -146,13 +146,16 @@ epics:
     blocks: ["006"]
     notes: |
       CRITICAL MVP FEATURE - Beta testers cannot evaluate 60-70% time savings without AI.
-      Infrastructure exists (claude-client.ts, document-generation.executor.ts).
-      Need Swedish foster care specific templates:
-      - Månadsrapporter (monthly reports)
-      - Handledarrapporter (supervisor reports)
-      - Journalanteckningar (journal entries)
-      - Email reply suggestions
-      - Calendar event extraction from emails
+
+      PHASE 1 COMPLETE (2026-01-15):
+      ✅ Database schema with AI metadata + AIAuditLog
+      ✅ Swedish prompts (månadsrapporter, handledarrapporter, journalanteckningar)
+      ✅ Backend service with Claude API integration
+      ✅ Frontend modals (DocumentGenerationModal, DocumentPreviewModal)
+      ✅ TipTap editor for preview/editing
+      ✅ Approve/reject workflow with edit tracking
+
+      NEXT: Run migration, test with Anna, then Phase 2 (email replies) + Phase 3 (calendar)
 
   - id: "006"
     title: "GDPR Compliance & Production Readiness"
@@ -175,11 +178,11 @@ metrics:
   completed_issues: 9
   in_progress_issues: 1
   blocked_issues: 0
-  overall_progress: 65  # Tests fixed, now implementing AI features
-  backend_progress: 95  # Backend nearly complete
-  frontend_progress: 75  # UI functional, polish needed
+  overall_progress: 75  # Phase 1 AI features complete, ready for testing
+  backend_progress: 98  # Swedish AI prompts + service complete
+  frontend_progress: 85  # AI document generation modals complete
   testing_progress: 100  # All tests passing (8/8)
-  ai_features_progress: 20  # Infrastructure exists, Swedish templates needed
+  ai_features_progress: 60  # Phase 1 done (3 doc types), Phases 2-3 pending (email/calendar)
   documentation_progress: 40  # PRD complete, ADRs missing
 
 # Notes and Context
