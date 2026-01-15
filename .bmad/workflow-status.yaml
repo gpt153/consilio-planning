@@ -141,7 +141,7 @@ epics:
     created: 2026-01-15
     started: 2026-01-15
     completed: null
-    issues: []
+    issues: [137]
     blocked_by: null
     blocks: ["006"]
     notes: |
