@@ -1,10 +1,11 @@
-# Project Brief: [Project Name]
+# Project Brief: Consilio
 
-**Created:** YYYY-MM-DD (Stockholm time)
-**Last Updated:** YYYY-MM-DD
-**Status:** Active | On Hold | Completed | Archived
-**Repository:** [GitHub URL]
-**Workspace:** `/home/samuel/.archon/workspaces/[project]/`
+**Created:** 2026-01-15 (Stockholm time)
+**Last Updated:** 2026-01-15
+**Status:** Active
+**Repository:** https://github.com/gpt153/consilio
+**Implementation Workspace:** `/home/samuel/.archon/workspaces/consilio/`
+**Planning Workspace:** `/home/samuel/supervisor/consilio/`
 
 ---
 
