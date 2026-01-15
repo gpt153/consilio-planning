@@ -11,7 +11,7 @@
 
 ## Vision
 
-Consilio is a modern case management platform designed for Swedish social services, specifically targeting foster care (familjehem) and child welfare case management. The platform empowers social care professionals to spend more time supporting people and less time on administration by providing an operationally trustworthy platform where communication never gets lost, documentation is a byproduct of work, and privacy is built-in from the foundation.
+Consilio is a modern case management platform designed for private Swedish consulting firms that provide consultant-supported foster care (konsulentföretag som bedriver konsulentstödd familjehemsvård). The platform empowers consultants to spend more time supporting foster families and placed children, and less time on administration, by providing an operationally trustworthy platform where communication never gets lost, documentation is a byproduct of work, and privacy is built-in from the foundation.
 
 ---
 
@@ -25,7 +25,7 @@ Consilio is a modern case management platform designed for Swedish social servic
 ### Success Criteria
 - [x] Backend foundation with authentication, case management, and email integration (100%)
 - [x] Responsive web UI with core workflows (75%)
-- [ ] Beta testing with 5-10 Swedish consultants (0%)
+- [ ] Beta testing with 5-10 consultants from Swedish consulting firms (0%)
 - [ ] GDPR compliance features (data export, deletion, retention) (20%)
 - [ ] Production deployment documentation and infrastructure (30%)
 - [ ] 60% time savings demonstrated in beta testing
@@ -34,11 +34,16 @@ Consilio is a modern case management platform designed for Swedish social servic
 
 ## Stakeholders
 
-### Primary Stakeholders
-- **Consultants (Konsulenter):** Case managers at consulting firms managing 15-30 cases simultaneously
-- **Foster Homes (Familjehem):** Families providing care who need 24/7 support and clear communication
-- **Social Workers (Socialsekreterare):** Municipal employees requiring timely reports and case visibility
-- **Clients (Future):** Placed children/youth with age-appropriate access
+### Primary Customers
+- **Consulting Firms (Konsultentföretag):** Private companies providing consultant-supported foster care services. They subscribe to Consilio and are the paying customers.
+
+### Primary Users
+- **Consultants (Konsulenter):** Employees at consulting firms managing 15-30 cases simultaneously. They are the primary daily users of the platform.
+- **Foster Homes (Familjehem):** Families contracted by consulting firms who need 24/7 support and clear communication channels with their assigned consultant.
+
+### External Stakeholders
+- **Municipal Social Workers (Socialsekreterare):** Government employees who order placements from consulting firms. They require timely reports and case visibility but are clients of the consulting firms, not primary system users.
+- **Placed Children/Youth (Future):** Age-appropriate access for those in foster care placements.
 
 ### Decision Makers
 - **Owner:** Samuel (Solo Developer)
@@ -134,7 +139,7 @@ Consilio is a modern case management platform designed for Swedish social servic
 - [ ] **Fix Test Suite:** Resolve TypeScript errors in test files - Target: 2026-01-16
 - [ ] **GDPR Compliance:** User data export/deletion endpoints - Target: 2026-01-20
 - [ ] **Production Deployment:** Documentation and infrastructure setup - Target: 2026-01-25
-- [ ] **Beta Recruitment:** Identify and onboard 5-10 testers - Target: 2026-02-01
+- [ ] **Beta Recruitment:** Identify and onboard 5-10 consultants from Swedish consulting firms - Target: 2026-02-01
 - [ ] **Beta Testing:** 2-week testing period with feedback - Target: 2026-02-15
 
 ---
@@ -156,7 +161,7 @@ Consilio is a modern case management platform designed for Swedish social servic
 
 4. **Beta Tester Acquisition**
    - **Impact:** Without real users, cannot validate product-market fit or identify critical bugs
-   - **Mitigation:** Leverage personal network, Swedish social services forums, consultant networks
+   - **Mitigation:** Leverage personal network, reach out to Swedish consulting firms (konsultentföretag), industry forums for consultant-supported foster care
 
 5. **Solo Developer Dependency**
    - **Impact:** Single point of failure; illness or unavailability halts development

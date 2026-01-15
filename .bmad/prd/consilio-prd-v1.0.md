@@ -9,7 +9,7 @@
 
 ## 1. Executive Summary
 
-Consilio is a modern case management platform designed specifically for Swedish social services, focusing on foster care (familjehem) placements and child welfare cases. The system serves as an operational hub that complements existing journal systems by streamlining communication, documentation, and case coordination between consultants, foster homes, social workers, and clients.
+Consilio is a modern case management platform designed specifically for private Swedish consulting firms that provide consultant-supported foster care (konsulentföretag som bedriver konsulentstödd familjehemsvård). The system serves as an operational hub that complements existing journal systems by streamlining communication, documentation, and case coordination between consultants, foster homes, social workers, and clients.
 
 The MVP delivers a backend API with authentication, case management, and email-based communication, paired with a responsive web interface. The core value proposition is **time savings through automation** - reducing administrative burden by 60-70% through AI-assisted documentation, automated workflows, and centralized communication - while maintaining the highest standards of data privacy through PostgreSQL Row-Level Security and strict GDPR compliance.
 
@@ -20,7 +20,7 @@ The MVP delivers a backend API with authentication, case management, and email-b
 ## 2. Mission
 
 **Product Mission Statement:**
-Empower social care professionals to spend more time supporting people and less time on administration, by providing an operationally trustworthy platform where communication never gets lost, documentation is a byproduct of work, and privacy is built-in from the foundation.
+Empower consultants at private foster care consulting firms to spend more time supporting foster families and placed children, and less time on administration, by providing an operationally trustworthy platform where communication never gets lost, documentation is a byproduct of work, and privacy is built-in from the foundation.
 
 **Core Principles:**
 
@@ -41,7 +41,7 @@ Empower social care professionals to spend more time supporting people and less 
 ### Primary User Personas
 
 #### A) Consultant (Konsulent) - Primary User
-- **Role:** Case manager employed by consulting firms (konsulentföretag)
+- **Role:** Case manager employed by private foster care consulting firms (konsulentföretag som bedriver konsulentstödd familjehemsvård)
 - **Technical Comfort:** Medium - comfortable with web applications, email, basic office tools
 - **Key Needs:**
   - Manage 15-30 cases simultaneously
@@ -56,7 +56,7 @@ Empower social care professionals to spend more time supporting people and less 
   - Switching between multiple systems (journal, email, phone, notes)
 
 #### B) Foster Home (Familjehem) - Primary User
-- **Role:** Family providing care for placed children/youth
+- **Role:** Family contracted by consulting firms to provide care for placed children/youth
 - **Technical Comfort:** Low to Medium - uses smartphones, social media, messaging apps
 - **Key Needs:**
   - Quick answers to everyday questions (behavior issues, school, health)
@@ -70,16 +70,16 @@ Empower social care professionals to spend more time supporting people and less 
   - Unclear expectations for documentation
 
 #### C) Social Worker (Socialsekreterare) - External Stakeholder
-- **Role:** Municipal employee who orders placements and requires reporting
+- **Role:** Municipal employee who orders placements from consulting firms and requires regular reporting. They are clients of the consulting firms, not primary system users.
 - **Technical Comfort:** Medium - uses government systems, email
 - **Key Needs:**
-  - Timely, structured reports from consultants
-  - Clear case status visibility
-  - Evidence of proper case management for audits
+  - Timely, structured reports from consultants at the consulting firms
+  - Clear case status visibility for placements they've ordered
+  - Evidence of proper case management for municipal audits
 - **Pain Points:**
-  - Delayed or incomplete reports
-  - Difficulty tracking case progress
-  - Limited visibility into day-to-day case management
+  - Delayed or incomplete reports from consulting firms
+  - Difficulty tracking progress of placements they've ordered
+  - Limited visibility into day-to-day case management by consulting firms
 
 #### D) Client (Klient) - Secondary User (Future)
 - **Role:** Placed child/youth (age-appropriate access)
