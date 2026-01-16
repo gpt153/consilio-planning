@@ -236,13 +236,13 @@ epics:
 
   - id: "007"
     title: "UX Redesign: Case-Switcher + Dual Dashboard"
-    status: planning
+    status: ready
     priority: high
     complexity: 3
     created: 2026-01-16
     started: 2026-01-16
     completed: null
-    issues: []
+    issues: [146, 147, 148, 149, 150, 151]
     blocked_by: null
     blocks: []
     notes: |
@@ -259,14 +259,23 @@ epics:
       ✅ User configuration options specified
       ✅ 6 implementation phases planned (3 weeks)
 
-      WAITING: Better mockup tools (user installing)
-      NEXT: Create enhanced visual mockups → Epic → SCAR implementation
+      IMPLEMENTATION READY (2026-01-16 22:00 CET):
+      ✅ Epic file created (.bmad/epics/epic-007-ux-redesign.md)
+      ✅ 6 GitHub issues posted (all SCAR acknowledged):
+         - Issue #146: Phase 1 - Case Switcher Bar (core component)
+         - Issue #147: Phase 2 - Main Dashboard (aggregate stats)
+         - Issue #148: Phase 3 - Case Dashboard (per-case deep dive)
+         - Issue #149: Phase 4 - Bulk AI Approval Workflow
+         - Issue #150: Phase 5 - Mobile Responsive Patterns
+         - Issue #151: Phase 6 - User Configuration + Preferences
+      ✅ Phase 1-6 implementation plan detailed in epic
+      ✅ Ready for SCAR to start Phase 1
 
 # Progress Metrics
 metrics:
   total_epics: 7
   completed_epics: 4
-  total_issues: 20
+  total_issues: 26
   completed_issues: 12
   in_progress_issues: 2
   blocked_issues: 0
@@ -275,7 +284,7 @@ metrics:
   frontend_progress: 90  # AI modals exist but missing service methods
   testing_progress: 80  # Tests pass but build fails (364 TypeScript errors)
   ai_features_progress: 20  # Database done, but implementation is placeholders
-  ux_redesign_progress: 30  # Design spec (100%), mockups (60%), implementation (0%)
+  ux_redesign_progress: 40  # Epic created, 6 issues posted, SCAR acknowledged, implementation starting
   documentation_progress: 50  # PRD complete, UX docs complete, ADRs missing
 
 # Notes and Context
@@ -319,6 +328,8 @@ notes: |
   - ✅ ASCII mockups for all major screens
   - ✅ Issue #138 merged (user profile/settings fixes)
   - ✅ Issue #139 merged (Gmail IMAP provider option)
+  - ✅ Epic 007 created and ready for implementation
+  - ✅ Issues #146-151 posted (all SCAR acknowledged)
   - ✅ Handoff document created
 
   **Technical Debt:**
