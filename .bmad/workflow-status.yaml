@@ -71,26 +71,30 @@ phases:
         completed_at: 2026-01-16
       - number: 138
         title: Fix User Profile/Settings Page
-        status: in_progress
+        status: completed
         epic: null
         assignee: scar
         priority: high
+        completed_at: 2026-01-16
       - number: 139
         title: Add Gmail as IMAP Provider Option
-        status: in_progress
+        status: completed
         epic: null
         assignee: scar
         priority: high
+        completed_at: 2026-01-16
     notes: |
-      82% complete toward MVP.
+      85% complete toward MVP.
       All AI features implemented: Swedish document generation, email replies, calendar extraction.
       Organization configured (153 AB with domain-based assignment).
-      Ready for beta testing after Issues #138 and #139 resolved.
+      User profile/settings page fixed (Issue #138 merged).
+      Gmail IMAP provider option added (Issue #139 merged).
+      Ready for UX redesign implementation (Epic 007).
 
 # Current Work
-current_epic: "007"  # UX Redesign (planning phase - awaiting mockup tools)
-active_issues: [138, 139]
-completed_issues: [137, 135, 133, 127, 126, 125, 123, 120, 107, 105]
+current_epic: "007"  # UX Redesign (ready for implementation)
+active_issues: []
+completed_issues: [139, 138, 137, 135, 133, 127, 126, 125, 123, 120, 107, 105]
 
 # Epic Status Tracking
 # NOTE: Epics directory empty - planning happening in implementation workspace
@@ -240,12 +244,12 @@ metrics:
   total_epics: 7
   completed_epics: 5
   total_issues: 18
-  completed_issues: 10
-  in_progress_issues: 2
+  completed_issues: 12
+  in_progress_issues: 0
   blocked_issues: 0
-  overall_progress: 82  # All 3 AI phases complete, UX redesign in planning
+  overall_progress: 85  # All bugs fixed, UX redesign ready for implementation
   backend_progress: 100  # All Swedish AI features complete (docs + email + calendar)
-  frontend_progress: 95  # All AI modals complete (doc gen + email reply + calendar)
+  frontend_progress: 100  # All AI modals complete + user profile fixes + Gmail IMAP
   testing_progress: 100  # All tests passing (8/8)
   ai_features_progress: 100  # All phases done! (docs + email + calendar extraction)
   ux_redesign_progress: 30  # Design spec (100%), mockups (60%), implementation (0%)
@@ -254,26 +258,26 @@ metrics:
 # Notes and Context
 notes: |
   **Current Status (2026-01-16):**
-  - 82% complete toward beta-ready MVP
+  - 85% complete toward beta-ready MVP
   - All core features implemented and functional
   - All AI features complete (100%): Document generation, email replies, calendar extraction
   - Database migration successful with AI schema changes
   - Organization configured (153 AB with domain-based user assignment)
-  - UX redesign documented (awaiting enhanced mockup tools)
-  - **SESSION PAUSED:** User installing better mockup tools for UX design
+  - User profile/settings page fully functional (Issue #138 merged)
+  - Gmail IMAP provider option added (Issue #139 merged)
+  - UX redesign documented and ready for implementation
 
   **Immediate Priorities:**
   1. ✅ Fix test failures (Issue #135 - COMPLETED)
   2. ✅ Implement AI document generation (COMPLETED - all 3 phases)
   3. ✅ Database migration (COMPLETED - 18 AI columns + audit logs)
-  4. 🔄 Fix user profile page (Issue #138 - SCAR working)
-  5. 🔄 Add Gmail IMAP option (Issue #139 - SCAR working)
-  6. ⏸️ Create enhanced UX mockups (waiting for tools)
-  7. ⏭️ Implement UX redesign (Epic 007 - 6 phases, 3 weeks)
+  4. ✅ Fix user profile page (Issue #138 - MERGED)
+  5. ✅ Add Gmail IMAP option (Issue #139 - MERGED)
+  6. ⏭️ Implement UX redesign (Epic 007 - 6 phases, 3 weeks)
 
-  **Waiting On:**
-  - User installing better mockup tools for UX visualization
-  - SCAR completing Issues #138 and #139
+  **Ready for Next Phase:**
+  - All bugs fixed, no active issues
+  - UX redesign Epic 007 ready for SCAR implementation
 
   **Recent Achievements (2026-01-16 Session):**
   - ✅ Epic 005 completed (all 3 AI phases)
@@ -284,6 +288,8 @@ notes: |
   - ✅ Organization setup with domain-based assignment
   - ✅ UX redesign specification (724 lines)
   - ✅ ASCII mockups for all major screens
+  - ✅ Issue #138 merged (user profile/settings fixes)
+  - ✅ Issue #139 merged (Gmail IMAP provider option)
   - ✅ Handoff document created
 
   **Technical Debt:**
