@@ -57,25 +57,40 @@ phases:
     github_issues:
       - number: 135
         title: Fix failing TypeScript tests in claude-client.test.ts
+        status: completed
+        epic: "004"
+        assignee: scar
+        priority: high
+        completed_at: 2026-01-15
+      - number: 137
+        title: "Epic 005: AI Document Generation - Swedish Foster Care Templates (MVP CORE)"
+        status: completed
+        epic: "005"
+        assignee: scar
+        priority: critical
+        completed_at: 2026-01-16
+      - number: 138
+        title: Fix User Profile/Settings Page
         status: in_progress
         epic: null
         assignee: scar
         priority: high
-      - number: 131
-        title: Add 'Process with AI' button
-        status: open
+      - number: 139
+        title: Add Gmail as IMAP Provider Option
+        status: in_progress
         epic: null
         assignee: scar
-        priority: medium
+        priority: high
     notes: |
-      70% complete toward MVP.
-      Core features implemented: auth, cases, documents, email, calendar.
-      Currently fixing test failures before beta launch.
+      82% complete toward MVP.
+      All AI features implemented: Swedish document generation, email replies, calendar extraction.
+      Organization configured (153 AB with domain-based assignment).
+      Ready for beta testing after Issues #138 and #139 resolved.
 
 # Current Work
-current_epic: null  # Using GitHub issues directly instead of epics
-active_issues: [135, 131]
-completed_issues: [133, 127, 126, 125, 123, 120, 107, 105]
+current_epic: "007"  # UX Redesign (planning phase - awaiting mockup tools)
+active_issues: [138, 139]
+completed_issues: [137, 135, 133, 127, 126, 125, 123, 120, 107, 105]
 
 # Epic Status Tracking
 # NOTE: Epics directory empty - planning happening in implementation workspace
@@ -135,12 +150,12 @@ epics:
 
   - id: "005"
     title: "AI Document Generation (MVP CORE)"
-    status: in_progress
+    status: completed
     priority: critical
     complexity: 3
     created: 2026-01-15
     started: 2026-01-15
-    completed: null
+    completed: 2026-01-16
     issues: [137]
     blocked_by: null
     blocks: ["006"]
@@ -170,7 +185,14 @@ epics:
       ✅ Confidence scoring (0.0-1.0)
       ✅ Multiple event support
 
-      ALL 3 PHASES COMPLETE! Ready for testing with Anna tomorrow.
+      MIGRATION COMPLETE (2026-01-16):
+      ✅ Database migration executed successfully
+      ✅ 18 AI columns added to documents table
+      ✅ ai_audit_logs table created
+      ✅ All indexes and foreign keys in place
+      ✅ Organization configured (153 AB with domain-based assignment)
+
+      ALL 3 PHASES COMPLETE! Ready for testing.
 
   - id: "006"
     title: "GDPR Compliance & Production Readiness"
@@ -185,54 +207,89 @@ epics:
     blocks: []
     notes: Required for EU/Swedish launch - data export, deletion, retention
 
+  - id: "007"
+    title: "UX Redesign: Case-Switcher + Dual Dashboard"
+    status: planning
+    priority: high
+    complexity: 3
+    created: 2026-01-16
+    started: 2026-01-16
+    completed: null
+    issues: []
+    blocked_by: null
+    blocks: []
+    notes: |
+      Consultant-centric UX redesign for improved workflow efficiency.
+
+      DESIGN PHASE COMPLETE (2026-01-16):
+      ✅ Complete design specification (724 lines)
+      ✅ ASCII mockups created for all major screens
+      ✅ Case Switcher Bar with 3 badge types (emails, urgent, AI pending)
+      ✅ Main Dashboard (aggregate across all cases)
+      ✅ Case Dashboard (per-case deep dive)
+      ✅ Bulk AI approval workflow designed
+      ✅ Mobile responsive patterns defined
+      ✅ User configuration options specified
+      ✅ 6 implementation phases planned (3 weeks)
+
+      WAITING: Better mockup tools (user installing)
+      NEXT: Create enhanced visual mockups → Epic → SCAR implementation
+
 # Progress Metrics
 metrics:
-  total_epics: 6
-  completed_epics: 4
-  total_issues: 16
-  completed_issues: 9
-  in_progress_issues: 1
+  total_epics: 7
+  completed_epics: 5
+  total_issues: 18
+  completed_issues: 10
+  in_progress_issues: 2
   blocked_issues: 0
-  overall_progress: 82  # All 3 AI phases complete, ready for Anna's testing
+  overall_progress: 82  # All 3 AI phases complete, UX redesign in planning
   backend_progress: 100  # All Swedish AI features complete (docs + email + calendar)
   frontend_progress: 95  # All AI modals complete (doc gen + email reply + calendar)
   testing_progress: 100  # All tests passing (8/8)
   ai_features_progress: 100  # All phases done! (docs + email + calendar extraction)
-  documentation_progress: 40  # PRD complete, ADRs missing
+  ux_redesign_progress: 30  # Design spec (100%), mockups (60%), implementation (0%)
+  documentation_progress: 50  # PRD complete, UX docs complete, ADRs missing
 
 # Notes and Context
 notes: |
-  **Current Status (2026-01-15):**
-  - 60% complete toward beta-ready MVP (revised down from 70% - AI features now in scope)
-  - Core features implemented and functional
-  - Test suite has failures - SCAR working on fix (Issue #135)
-  - Planning workspace activated today (BMAD methodology)
-  - **CRITICAL SCOPE CLARIFICATION:** AI document generation IS MVP core, not post-MVP
+  **Current Status (2026-01-16):**
+  - 82% complete toward beta-ready MVP
+  - All core features implemented and functional
+  - All AI features complete (100%): Document generation, email replies, calendar extraction
+  - Database migration successful with AI schema changes
+  - Organization configured (153 AB with domain-based user assignment)
+  - UX redesign documented (awaiting enhanced mockup tools)
+  - **SESSION PAUSED:** User installing better mockup tools for UX design
 
   **Immediate Priorities:**
-  1. Fix test failures (Issue #135 - in progress)
-  2. **Implement AI document generation (månadsrapporter, handledarrapporter, journalanteckningar)**
-  3. **Implement AI email reply suggestions**
-  4. **Implement AI calendar event extraction**
-  5. GDPR compliance features (data export/deletion)
-  6. Production deployment documentation
-  7. Beta tester recruitment
+  1. ✅ Fix test failures (Issue #135 - COMPLETED)
+  2. ✅ Implement AI document generation (COMPLETED - all 3 phases)
+  3. ✅ Database migration (COMPLETED - 18 AI columns + audit logs)
+  4. 🔄 Fix user profile page (Issue #138 - SCAR working)
+  5. 🔄 Add Gmail IMAP option (Issue #139 - SCAR working)
+  6. ⏸️ Create enhanced UX mockups (waiting for tools)
+  7. ⏭️ Implement UX redesign (Epic 007 - 6 phases, 3 weeks)
 
-  **Blockers:**
-  - Test failures preventing deployment confidence
-  - GDPR features required before EU/Swedish launch
+  **Waiting On:**
+  - User installing better mockup tools for UX visualization
+  - SCAR completing Issues #138 and #139
 
-  **Recent Achievements:**
-  - Google OAuth authentication (Issue #120)
-  - Client information fields (Issue #125)
-  - Social worker associations (Issue #126)
-  - File upload system (Issue #127)
-  - AI document processing UX (Issue #133)
+  **Recent Achievements (2026-01-16 Session):**
+  - ✅ Epic 005 completed (all 3 AI phases)
+  - ✅ Swedish AI prompts for IVO-compliant documents
+  - ✅ Email reply generation (3 variants)
+  - ✅ Calendar event extraction with Swedish date parsing
+  - ✅ Database migration executed successfully
+  - ✅ Organization setup with domain-based assignment
+  - ✅ UX redesign specification (724 lines)
+  - ✅ ASCII mockups for all major screens
+  - ✅ Handoff document created
 
   **Technical Debt:**
   - ADRs not documented (need to record architectural decisions)
-  - Test coverage unknown (need full coverage analysis)
-  - Performance not benchmarked (RLS overhead, caching needs)
+  - Rate limiting not implemented for Claude API
+  - Shadow database permissions (manual migration workaround used)
   - Deployment guide missing
 
 # Decision Log (Quick References)
