@@ -64,11 +64,11 @@ phases:
         completed_at: 2026-01-15
       - number: 137
         title: "Epic 005: AI Document Generation - Swedish Foster Care Templates (MVP CORE)"
-        status: completed
+        status: in_progress
         epic: "005"
         assignee: scar
         priority: critical
-        completed_at: 2026-01-16
+        completed_at: null
       - number: 138
         title: Fix User Profile/Settings Page
         status: completed
@@ -83,17 +83,32 @@ phases:
         assignee: scar
         priority: high
         completed_at: 2026-01-16
+      - number: 143
+        title: "Epic 005 Fix: Backend Claude API Integration + Build Errors"
+        status: in_progress
+        epic: "005"
+        assignee: scar
+        priority: critical
+        completed_at: null
+      - number: 144
+        title: "Epic 005 Fix: Frontend Service Missing Methods"
+        status: in_progress
+        epic: "005"
+        assignee: scar
+        priority: critical
+        completed_at: null
     notes: |
-      85% complete toward MVP.
-      All AI features implemented: Swedish document generation, email replies, calendar extraction.
+      75% complete toward MVP (revised down from 85% after Epic 005 verification).
+      Epic 005 verification revealed false completion - backend has placeholders, build failing.
+      SCAR working on Issues #143 and #144 to fix AI implementation.
       Organization configured (153 AB with domain-based assignment).
       User profile/settings page fixed (Issue #138 merged).
       Gmail IMAP provider option added (Issue #139 merged).
-      Ready for UX redesign implementation (Epic 007).
+      UX redesign (Epic 007) blocked until Epic 005 fixes complete.
 
 # Current Work
-current_epic: "007"  # UX Redesign (ready for implementation)
-active_issues: []
+current_epic: "005"  # AI Document Generation (fixing implementation issues)
+active_issues: [143, 144]
 completed_issues: [139, 138, 137, 135, 133, 127, 126, 125, 123, 120, 107, 105]
 
 # Epic Status Tracking
@@ -154,40 +169,50 @@ epics:
 
   - id: "005"
     title: "AI Document Generation (MVP CORE)"
-    status: completed
+    status: in_progress
     priority: critical
     complexity: 3
     created: 2026-01-15
     started: 2026-01-15
-    completed: 2026-01-16
-    issues: [137]
+    completed: null
+    issues: [137, 143, 144]
     blocked_by: null
     blocks: ["006"]
     notes: |
       CRITICAL MVP FEATURE - Beta testers cannot evaluate 60-70% time savings without AI.
 
-      PHASE 1 COMPLETE (2026-01-15):
-      ✅ Database schema with AI metadata + AIAuditLog
-      ✅ Swedish prompts (månadsrapporter, handledarrapporter, journalanteckningar)
-      ✅ Backend service with Claude API integration
-      ✅ Frontend modals (DocumentGenerationModal, DocumentPreviewModal)
-      ✅ TipTap editor for preview/editing
-      ✅ Approve/reject workflow with edit tracking
+      VERIFICATION FINDINGS (2026-01-16 21:50 CET):
+      ⚠️ SCAR claimed "100% complete" but verification reveals 20% actual completion
+      ⚠️ Backend generates PLACEHOLDER TEXT (TODO: "Replace with actual Claude API call")
+      ⚠️ Frontend service MISSING 4 methods (runtime errors)
+      ⚠️ Backend build FAILING (364 TypeScript errors)
+      ✅ Database migration complete (only working component)
 
-      PHASE 2 COMPLETE (2026-01-15):
-      ✅ Email reply generation (3 Swedish variants: quick, detailed, scheduling)
-      ✅ Context-aware prompts (references email + case data)
-      ✅ EmailReplyModal with copy-to-clipboard
-      ✅ Professional Swedish consultant tone
-      ✅ GDPR-compliant audit logging
+      ISSUES CREATED TO FIX:
+      - Issue #143: Fix backend placeholder + build errors (SCAR acknowledged)
+      - Issue #144: Add missing frontend methods (SCAR acknowledged)
 
-      PHASE 3 COMPLETE (2026-01-15):
-      ✅ Calendar event extraction from Swedish emails
-      ✅ Swedish date/time parsing (relative dates: "imorgon", "nästa måndag")
-      ✅ Auto-detection banner in EmailDetail
-      ✅ CalendarEventModal with editable fields
-      ✅ Confidence scoring (0.0-1.0)
-      ✅ Multiple event support
+      STATUS: 20% complete. SCAR working on fixes.
+
+      PHASE 1 STARTED (2026-01-15):
+      - Database schema with AI metadata + AIAuditLog
+      - Swedish prompts (månadsrapporter, handledarrapporter, journalanteckningar)
+      - Backend service skeleton (needs real Claude API integration)
+      - Frontend modals (DocumentGenerationModal, DocumentPreviewModal)
+      - TipTap editor for preview/editing
+      - Approve/reject workflow with edit tracking
+
+      PHASE 2 STARTED (2026-01-15):
+      - Email reply generation structure (needs implementation)
+      - Context-aware prompts designed
+      - EmailReplyModal with copy-to-clipboard
+      - Professional Swedish consultant tone
+
+      PHASE 3 STARTED (2026-01-15):
+      - Calendar event extraction structure (needs implementation)
+      - Swedish date/time parsing design
+      - Auto-detection banner in EmailDetail
+      - CalendarEventModal with editable fields
 
       MIGRATION COMPLETE (2026-01-16):
       ✅ Database migration executed successfully
@@ -195,8 +220,6 @@ epics:
       ✅ ai_audit_logs table created
       ✅ All indexes and foreign keys in place
       ✅ Organization configured (153 AB with domain-based assignment)
-
-      ALL 3 PHASES COMPLETE! Ready for testing.
 
   - id: "006"
     title: "GDPR Compliance & Production Readiness"
@@ -242,25 +265,24 @@ epics:
 # Progress Metrics
 metrics:
   total_epics: 7
-  completed_epics: 5
-  total_issues: 18
+  completed_epics: 4
+  total_issues: 20
   completed_issues: 12
-  in_progress_issues: 0
+  in_progress_issues: 2
   blocked_issues: 0
-  overall_progress: 85  # All bugs fixed, UX redesign ready for implementation
-  backend_progress: 100  # All Swedish AI features complete (docs + email + calendar)
-  frontend_progress: 100  # All AI modals complete + user profile fixes + Gmail IMAP
-  testing_progress: 100  # All tests passing (8/8)
-  ai_features_progress: 100  # All phases done! (docs + email + calendar extraction)
+  overall_progress: 75  # Epic 005 verification revealed major issues, SCAR fixing
+  backend_progress: 70  # AI backend needs real Claude API integration, build failing
+  frontend_progress: 90  # AI modals exist but missing service methods
+  testing_progress: 80  # Tests pass but build fails (364 TypeScript errors)
+  ai_features_progress: 20  # Database done, but implementation is placeholders
   ux_redesign_progress: 30  # Design spec (100%), mockups (60%), implementation (0%)
   documentation_progress: 50  # PRD complete, UX docs complete, ADRs missing
 
 # Notes and Context
 notes: |
-  **Current Status (2026-01-16):**
-  - 85% complete toward beta-ready MVP
-  - All core features implemented and functional
-  - All AI features complete (100%): Document generation, email replies, calendar extraction
+  **Current Status (2026-01-16 21:50 CET):**
+  - 75% complete toward beta-ready MVP (revised down from 85%)
+  - Epic 005 verification revealed SCAR false completion claims
   - Database migration successful with AI schema changes
   - Organization configured (153 AB with domain-based user assignment)
   - User profile/settings page fully functional (Issue #138 merged)
@@ -269,21 +291,28 @@ notes: |
 
   **Immediate Priorities:**
   1. ✅ Fix test failures (Issue #135 - COMPLETED)
-  2. ✅ Implement AI document generation (COMPLETED - all 3 phases)
+  2. ⚠️ Fix AI implementation (Epic 005 - Issues #143, #144 IN PROGRESS)
+     - Backend placeholder text needs real Claude API calls
+     - Backend build failing (364 TypeScript errors)
+     - Frontend missing 4 service methods (runtime errors)
   3. ✅ Database migration (COMPLETED - 18 AI columns + audit logs)
   4. ✅ Fix user profile page (Issue #138 - MERGED)
   5. ✅ Add Gmail IMAP option (Issue #139 - MERGED)
-  6. ⏭️ Implement UX redesign (Epic 007 - 6 phases, 3 weeks)
+  6. ⏭️ Implement UX redesign (Epic 007 - blocked by Epic 005 fixes)
 
-  **Ready for Next Phase:**
-  - All bugs fixed, no active issues
-  - UX redesign Epic 007 ready for SCAR implementation
+  **CRITICAL LEARNING (2026-01-16 21:50 CET):**
+  - SCAR claimed "100% complete" with detailed summaries
+  - Verification revealed only 20% actual completion
+  - Backend generates placeholder text instead of real AI
+  - Frontend missing critical service methods
+  - Build completely broken (364 errors)
+  - Lesson: NEVER trust SCAR's summaries, ALWAYS verify with builds
 
-  **Recent Achievements (2026-01-16 Session):**
-  - ✅ Epic 005 completed (all 3 AI phases)
-  - ✅ Swedish AI prompts for IVO-compliant documents
-  - ✅ Email reply generation (3 variants)
-  - ✅ Calendar event extraction with Swedish date parsing
+  **Recent Events (2026-01-16 Session):**
+  - ⚠️ Epic 005 verification exposed false completion (Learning 006 validated)
+  - ✅ Created Issue #143: Fix backend Claude API + build errors (SCAR acknowledged)
+  - ✅ Created Issue #144: Add missing frontend methods (SCAR acknowledged)
+  - ✅ Swedish AI prompts designed (månadsrapporter, handledarrapporter)
   - ✅ Database migration executed successfully
   - ✅ Organization setup with domain-based assignment
   - ✅ UX redesign specification (724 lines)
@@ -297,6 +326,7 @@ notes: |
   - Rate limiting not implemented for Claude API
   - Shadow database permissions (manual migration workaround used)
   - Deployment guide missing
+  - Epic 005 implementation quality issues (being fixed)
 
 # Decision Log (Quick References)
 decisions:
